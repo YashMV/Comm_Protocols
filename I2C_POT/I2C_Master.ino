@@ -1,7 +1,7 @@
 //Master
 
-#include <Wire.h>
-#define slave_addr 2
+#include <Wire.h> //Including wire library
+#define slave_addr 2 //defining slave address
 int sensor; //Variable to read the incoming data
 byte val; //8 bit data to be sent
 
