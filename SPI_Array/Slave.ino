@@ -7,7 +7,7 @@ volatile byte c;
 
 byte i = 0;
 volatile byte j = 0;
-byte arr[4];
+byte arr[11];
 
 void setup (void)
 {
@@ -21,7 +21,7 @@ void loop (void)
 {
   if (flag2 == true)
   {
-    for (int k = 0; k < 4; k++)
+    for (int k = 0; k < 11; k++)
     {
       Serial.print(arr[k]);
     }
@@ -33,6 +33,28 @@ void loop (void)
   }
 }
 
+
+ISR (SPI_STC_vect)
+{
+  c = SPDR;
+  if (flag1 == false)
+  {
+    if (c == 0xCD)
+    {
+      SPDR = 0xEF;
+      flag1 = true;
+    }
+  }
+  else
+  {
+    arr[j] = c;
+    j++;
+    if (j == 10)
+    {
+      flag2 = true;
+    }
+  }
+}
 
 ISR (SPI_STC_vect)
 {
