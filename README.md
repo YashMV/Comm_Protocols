@@ -8,3 +8,6 @@ UART_POT
 
 UART Hello
 ![image](https://user-images.githubusercontent.com/87477812/170333099-0a340b13-4f11-480a-a18e-c78dd6281874.png)
+
+SPI_Array
+![image](https://user-images.githubusercontent.com/87477812/170842794-1d6b040e-14c4-4e1d-9177-bc7662eb45c6.png)
