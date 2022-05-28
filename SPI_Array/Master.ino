@@ -1,7 +1,7 @@
 //Master
 
 #include <SPI.h>
-byte arr [3] = {1, 2, 3};
+byte arr [10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
 void setup (void)
 {
@@ -25,7 +25,7 @@ void loop (void)
   //Serial.println(x);
   if (x == 0xEF)
   {
-    for (byte i = 0 ; i < 3 ; i++)
+    for (byte i = 0 ; i < 10 ; i++)
     {
         b = (arr[i]);
         byte y = SPI.transfer (b);
